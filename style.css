@@ -1,0 +1,157 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+  color: #fff;
+  padding: 40px;
+  line-height: 1.6;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  text-align: center;
+  color: #ffce00;
+}
+
+/* Button Styles */
+#magicBtn {
+  padding: 15px 30px;
+  background-color: #ffce00;
+  color: #000;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  display: block;
+  margin: 20px auto;
+}
+
+#magicBtn:hover {
+  background-color: #ffc107;
+  transform: scale(1.05);
+}
+
+/* Form Styling */
+form {
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 400px;
+  margin: 40px auto;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+input:focus {
+  outline: none;
+  border-color: #ffce00;
+  background-color: #1a1a1a;
+  color: #fff;
+}
+
+/* Submit Button */
+form button[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  background-color: #00c9a7;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+form button:hover {
+  background-color: #00b894;
+}
+
+/* Tabs */
+.tabs {
+  margin: 40px auto;
+  max-width: 600px;
+  text-align: center;
+}
+
+.tab-btn {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 25px;
+  margin: 5px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.tab-btn:hover {
+  background-color: #555;
+}
+
+.tab-content {
+  display: none;
+  background-color: #111;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 10px;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  } to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  body {
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  #magicBtn {
+    width: 100%;
+  }
+
+  form {
+    width: 100%;
+  }
+}
+
+  

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Interactive Form Demo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #020c1d;
+      padding: 20px;
+    }
+    .container {
+      max-width: 400px;
+      margin: auto;
+      background: rgb(95, 152, 216);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #758fc9;
+    }
+    input, button {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+    }
+    button:hover {
+      background-color:#020c1d;
+      color: white;
+      cursor: pointer;
+    }
+    .message {
+      display: none;
+      margin-top: 10px;
+      color: #161a1f;
+    }
+    .error {
+      color: red;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>Subscribe to Our Newsletter</h2>
+    <form id="subscribeForm">
+      <input type="text" id="name" placeholder="Enter your name" />
+      <div id="nameError" class="error"></div>
+      <input type="email" id="email" placeholder="Enter your email" />
+      <div id="emailError" class="error"></div>
+      <button type="submit">Subscribe</button>
+    </form>
+
+    <button id="toggleMessage">Click for Surprise</button>
+    <div class="message" id="surpriseMessage">🎉 You are awesome! 🎉</div>
+  </div>
+
+  <script>
+    // Event listener for form submission
+    document.getElementById('subscribeForm').addEventListener('submit', function(event) {
+      event.preventDefault(); // Stop form from submitting
+      let name = document.getElementById('name').value.trim();
+      let email = document.getElementById('email').value.trim();
+      let valid = true;
+
+      // Reset errors
+      document.getElementById('nameError').textContent = '';
+      document.getElementById('emailError').textContent = '';
+
+      // Validate name
+      if (name === '') {
+        document.getElementById('nameError').textContent = 'Name is required.';
+        valid = false;
+      }
+
+      // Validate email format
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email)) {
+        document.getElementById('emailError').textContent = 'Enter a valid email.';
+        valid = false;
+      }
+
+      if (valid) {
+        alert(`Thanks for subscribing, ${name}!`);
+      }
+    });
+
+    // Event listener for surprise message toggle
+    document.getElementById('toggleMessage').addEventListener('click', function() {
+      const msg = document.getElementById('surpriseMessage');
+      msg.style.display = msg.style.display === 'block' ? 'none' : 'block';
+    });
+  </script>
+
+</body>
+</html>
